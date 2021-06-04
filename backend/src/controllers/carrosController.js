@@ -44,7 +44,7 @@ function index(req, res){
              error: true,
              mensaje: "La marca es necesaria"
           });
-       if(carros.año.length == 4)
+       if(carros.año.length != 4)
           return res.status(400).send({
              error: true,
              mensaje: "La longitud del año debe ser 4"
