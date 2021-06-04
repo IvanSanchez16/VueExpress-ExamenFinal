@@ -96,20 +96,24 @@ export default {
         this.crearCarros({
           params: this.carro,
           onComplete: (response) => {
+             
             this.$notify({
               type: 'success', 
               title: response.data.mensaje,
             });
+            
             this.$router.push({
                 name: 'Home'
             })
           },
           onError: (error) => {
               console.log(error);
+              
             this.$notify({
               type: 'error', 
               title: error.response.data.mensaje,
             });
+            
           },
         });
       } else {
