@@ -6,8 +6,10 @@ app.set('port', process.env.PORT || 3000);
 
 require('./src/config/connection');
 
-app.use(require('./src/routes'));
+app.use(express.urlencoded({extended: false}));
+app.use(express.json());
 
+app.use(require('./src/routes'));
 
 app.listen(app.get('port'), (error) => {
     if (error) 
